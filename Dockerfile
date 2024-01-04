@@ -12,7 +12,7 @@ COPY . .
 RUN cargo install --path .
 
 # Make port 8000 available to the world outside this container
-EXPOSE 8000
+EXPOSE 80
 
 # Run the binary program produced by `cargo install`
 CMD ["GHBackend"]

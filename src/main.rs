@@ -63,7 +63,14 @@ pub async fn enter_handler() -> Result<Json<GenericResponse>, Status> {
     Ok(Json(response))
 }
 
+use rocket::Config;
+
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/api", routes![exit_handler, enter_handler])
+    let config = Config {
+        port: 80,
+        ..Config::default()
+    };
+
+    rocket::custom(config).mount("/api", routes![exit_handler, enter_handler])
 }
