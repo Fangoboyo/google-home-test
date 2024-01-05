@@ -68,7 +68,8 @@ use rocket::Config;
 #[launch]
 fn rocket() -> _ {
     let config = Config {
-        port: 80,
+        address: "0.0.0.0".to_string().parse().unwrap(),
+        port: 3000,
         ..Config::default()
     };
 
