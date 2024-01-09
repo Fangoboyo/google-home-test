@@ -6,7 +6,7 @@ FROM chef AS planner
 # Copy source code from previous stage
 COPY . .
 # Generate info for caching dependencies
-RUN apt install pkg-config
+RUN apt-get -y install pkg-config
 RUN cargo chef prepare --recipe-path recipe.json
 
 FROM chef AS builder
