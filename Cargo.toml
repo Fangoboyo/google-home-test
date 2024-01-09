@@ -11,7 +11,7 @@ port = 3000
 
 [dependencies]
 chrono = { version = "0.4.31", features = ["serde"] }
-rocket = { version = "0.5.0-rc.2", features = ["json"] }
+rocket = { version = "0.5.0", features = ["json"] }
 serde = { version = "1.0.193", features = ["derive"] }
 uuid = { version = "1.6.1", features = ["v4"] }
 homeassistant = "0.3.0"
