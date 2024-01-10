@@ -1,5 +1,5 @@
 FROM messense/rust-musl-cross:x86_64-musl as chef
-RUN apt-get update && apt-get install pkg-config libssl-dev
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install pkg-config libssl-dev librust-openssl-sys-dev
 RUN cargo install cargo-chef
 WORKDIR /GHBackend
 
