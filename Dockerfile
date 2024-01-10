@@ -1,8 +1,5 @@
 FROM messense/rust-musl-cross:x86_64-musl as chef
-RUN apt-get update && apt-get install -y pkg-config libssl-dev openssl
-# Set the OPENSSL_STATIC and OPENSSL_VENDORED environment variables
-ENV OPENSSL_STATIC=true
-ENV OPENSSL_VENDORED=true
+RUN apt-get update && apt-get install pkg-config libssl-dev librust-openssl-sys-dev
 RUN cargo install cargo-chef
 WORKDIR /GHBackend
 
